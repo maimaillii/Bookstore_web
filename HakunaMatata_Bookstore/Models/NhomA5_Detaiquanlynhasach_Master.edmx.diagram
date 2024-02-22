@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="25d3817e4ad241d3ac49f438e88395ad" Name="Diagram1" ZoomLevel="56">
+        <EntityTypeShape EntityType="QuanlynhasachModel8.CHITIETDONDATHANG" Width="1.5" PointX="5.375" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanlynhasachModel8.CHITIETPHIEUNHAP" Width="1.5" PointX="5.625" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanlynhasachModel8.DONDATHANG" Width="1.5" PointX="5.625" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanlynhasachModel8.KHACHHANG" Width="1.5" PointX="0.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanlynhasachModel8.LOAITHANHVIEN" Width="1.5" PointX="5.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanlynhasachModel8.LOAITHANHVIEN_QUYEN" Width="1.5" PointX="17.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanlynhasachModel8.NHAXUATBAN" Width="1.5" PointX="0.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanlynhasachModel8.PHIEUNHAP" Width="1.5" PointX="2.875" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanlynhasachModel8.QUYEN" Width="1.5" PointX="5.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanlynhasachModel8.SACH" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanlynhasachModel8.TACGIA" Width="1.5" PointX="0.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanlynhasachModel8.THANHVIEN" Width="1.5" PointX="8" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanlynhasachModel8.THELOAI" Width="1.5" PointX="0.625" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="QuanlynhasachModel8.FK_CHITIETDONDATHANG_Dondathang" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanlynhasachModel8.FK_CHITIETDONDATHANG_Sanphan" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanlynhasachModel8.FK_CHITIETPHIEUNHAP_Phieunhap" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanlynhasachModel8.FK_CHITIETPHIEUNHAP_Sach" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanlynhasachModel8.FK_DONDATHANG_Khachhang" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanlynhasachModel8.FK_LOAITHANHVIEN_QUYEN_Loaithanhvien" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanlynhasachModel8.FK_THANHVIEN_loaithanhvien" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanlynhasachModel8.FK_LOAITHANHVIEN_QUYEN_Quyen" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanlynhasachModel8.FK_PHIEUNHAP_nhaCC" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanlynhasachModel8.FK_SACH_Nhaxuatban" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanlynhasachModel8.FK_SACH_Tacgia" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanlynhasachModel8.FK_SACH_Theloai" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

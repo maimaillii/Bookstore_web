@@ -1,0 +1,234 @@
+﻿@using HakunaMatata_Bookstore.Models
+@using CaptchaMvc.HtmlHelpers
+@using CaptchaMvc
+
+
+<script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+<style>
+    bodywy {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .containerrne {
+        position: absolute;
+        right: 35%;
+        margin: 20px;
+        max-width: 350px;
+        padding: 16px;
+        padding-left: 15px;
+        background-color: white;
+    }
+
+    .buttonxs {
+        padding: 5px;
+        transition-duration: 0.4s;
+        background-color: white;
+        border: none;
+        margin-right: 0px;
+    }
+
+        .buttonxs:hover {
+            background-color: white;
+            color: white;
+            border: none;
+        }
+
+    .search-containerv {
+        background: white;
+        height: 30px;
+        padding: 5px 0px;
+        padding-left: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.8s;
+    }
+
+        .search-containerv:hover > .search-input {
+            width: 600px;
+        }
+
+        .search-containerv .search-input {
+            background: white;
+            border: none;
+            outline: none;
+            width: 0px;
+            font-weight: 200;
+            font-size: 16px;
+            transition: 0.8s;
+        }
+
+        .search-containerv .search-btn .fas {
+            color: #5cbdbb;
+        }
+
+    @@keyframes hoverShake {
+        0% {
+            transform: skew(0deg,0deg);
+        }
+
+        25% {
+            transform: skew(5deg, 5deg);
+        }
+
+        75% {
+            transform: skew(-5deg, -5deg);
+        }
+
+        100% {
+            transform: skew(0deg,0deg);
+        }
+    }
+
+
+    .containerr {
+        position: absolute;
+        right: 35%;
+        margin: 20px;
+        max-width: 350px;
+        padding: 16px;
+        background-color: white;
+    }
+
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 0px;
+        border: none;
+        background: #dde8fa;
+    }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: white;
+            outline: none;
+        }
+
+    /* Set a style for the submit button */
+    .btnn {
+        background-color: #045E8B;
+        color: white;
+        padding: 0px 0px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+        .btnn:hover {
+            opacity: 10;
+        }
+
+    .qmk a {
+        color: black;
+        font-size: 15px;
+        position: absolute;
+        right: 0cm;
+        height: 10px;
+        width: 10px;
+    }
+</style>
+
+<div class="banner-top">
+    <div class="social-bnr-agileits">
+        <ul>
+            <li><a href="/Quanlysanpham/Index"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+    <div class="contact-bnr-w3-agile">
+        <ul>
+            <li>
+                @using (Html.BeginForm("KQTimkiem", "Timkiem"))
+                {
+                    <div class="bodywy">
+                        <div class="search-containerv">
+                            <input type="text" name="sTukhoa" placeholder="  Hãy nhập sách bạn cần tìm..." class="search-input" style="color:black">
+                            <button type="submit" class="buttonxs"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                }
+            </li>
+
+
+
+
+            @if (Session["Taikhoan"] != null && Session["Taikhoan"] != "")
+            {
+                THANHVIEN tv = (THANHVIEN)Session["Taikhoan"];
+                <li>Chào @tv.Taikhoan</li>
+                @Html.ActionLink("Đăng xuất", "LogOut", "Home")
+            }
+            else
+            {
+                <li><i class="fa fa-registered" aria-hidden="true"></i><a href="/Home/Dangki" class="text-capitalize">Đăng kí</a></li>
+                <li><i class="fa fa-user-md" aria-hidden="true"></i><a href="/Home/Login">Đăng nhập</a></li>
+            }
+
+            @Html.Action("GiohangPartial", "Giohang")
+
+            @*<li>
+                    <a href="Giohang"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                </li>*@
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<header>
+    <div class="container">
+
+        <!-- navigation -->
+        <div class="w3_navigation">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header navbar-left">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="w3_navigation_pos">
+                        <h1><a href="Home/Index"><span>H</span>akuna <span>M</span>atata</a></h1>
+                    </div>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                    <nav class="menu menu--miranda">
+                        <ul class="nav navbar-nav menu__list">
+                            <li class="menu__item menu__item--current"><a href="/Home/index" class="menu__link">Home</a></li>
+
+                            <li class="menu__item">
+                                <a href="/Danhmucsanpham/Trangsanpham" class=" menu__link" role="button" aria-haspopup="true" aria-expanded="false">Books<span class="caret"></span></a>
+                                @*<ul class="dropdown-menu" style="display: none;">
+                                    <li><a href="#">Sản phẩm mới</a></li>
+                                    <li><a href="#">Sản phẩm bán chạy</a></li>
+                                    <li><a href="#">Sản phẩm phổ biến</a></li>
+                                </ul>*@
+                            </li>
+                            <li class="menu__item"><a href="/Home/Tintuc" class=" menu__link">New</a></li>
+                            <li class="menu__item"><a href="/Home/About" class=" menu__link">About</a></li>
+                            <li class="menu__item"><a href="/Home/Even" class=" menu__link">Event</a></li>
+                            <li class="dropdown menu__item">
+                                <a href="/Home/Login" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+                                <ul class="dropdown-menu" style="display: none;">
+                                    <li><a href="/Home/Login">Log in</a></li>
+                                    <li><a href="/Home/Dangki">Register</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </nav>
+        </div>
+        <!-- //navigation -->
+    </div>
+</header>
+

@@ -1,0 +1,84 @@
+﻿@using HakunaMatata_Bookstore.Models;
+@model LOAITHANHVIEN
+@{ ViewBag.Title = "PhanQuyen";
+                Layout = "~/Views/layout/Thongke.cshtml"; }
+
+<h1>Phân quyền</h1>
+<h2 style="color:red;">Loại Thành viên: <font color="red">@Model.TenLoaithanhvien</font></h2>
+<br />
+
+@{ // Láy danh sách Quyền
+                IEnumerable<QUYEN> lstQuyen = (IEnumerable<QUYEN>)ViewBag.MaQuyen;
+                IEnumerable<LOAITHANHVIEN_QUYEN> lstLTVQuyen = (IEnumerable<LOAITHANHVIEN_QUYEN>)ViewBag.LoaiTVQuyen; }
+
+@using (Html.BeginForm())
+{
+    // Mã loại thành viên
+@Html.Hidden("MaLoaiTV", Model.Maloaithanhvien) if (lstQuyen != null)
+                {
+                    //Đối với trường hợp loại thành viên đã phân quyền rồi
+                    for (int j = 0; j < lstQuyen.Count(); j++)
+                    {
+                        int k = 0; //Tạo biến k làm biến đếm để duyệt dòng lặp của bảng quyền xem nếu mà
+                                   //loại thành viên nào có mã quyền(LoaiTV_Quyen) ứng với quyền (MaQuyen)
+                        for (int i = 0; i < lstLTVQuyen.Count(); i++)
+                        {
+                            //So sánh giữa item trong bảng quyền và item trong bảng loại thành viên quyền dựa trên thuộc MaQuyen
+                            if (lstLTVQuyen.ElementAt(i).Maquyen == lstQuyen.ElementAt(j).Maquyen)
+                            {
+                                k++;
+                                break;
+                            }
+                        }
+                        if (k != 0)
+                        {
+<div class="col-md-4" style="font-size:15pt;">
+    <input class="ckb_click"
+           checked="checked"
+           style="width:20px;height:20px;"
+           type="checkbox"
+           name="@Url.Content("["+j+"].Maquyen")"
+           value="@lstQuyen.ElementAt(j).Maquyen" />  @lstQuyen.ElementAt(j).Tenquyen
+    </div> }
+                            else
+                            {
+    <div class="col-md-4" style="font-size:15pt;">
+        <input class="ckb_click"
+               style="width:20px;height:20px;"
+               type="checkbox"
+               name="@Url.Content("["+j+"].Maquyen")"
+               value="@lstQuyen.ElementAt(j).Maquyen" />  @lstQuyen.ElementAt(j).Tenquyen
+        </div> }
+                                k = 0; // Gán lại k=0
+                            }
+                        }
+                        else
+                        {
+                            //Đối với trường hợp loại thành viên chưa phân quyền
+                            for (int i = 0; i < lstQuyen.Count(); i++)
+                            { @*Lấy danh sách quyền*@
+                                                    <div class="col-md-4" style="font-size:15pt;">
+                                                        <input class="ckb_click"
+                                                               style="width:20px;height:20px;"
+                                                               type="checkbox"
+                                                               name="@Url.Content("["+i+"].Maquyen")"
+                                                               value="@lstQuyen.ElementAt(i).Maquyen" />  @lstQuyen.ElementAt(i).Tenquyen
+                                                        </div> }
+                                                                        }
+                                                        <div class="clearfix"></div>
+                                                                        <input type="submit" value="Thực hiện" class="btn btn-success" />}
+<br />
+@Html.ActionLink("Trở về", "Index", null, new { @class = "btn btn-primary" })
+@*Viết hàm jQuery để duyệt lại checkbox đã được check*@
+<script>
+    $(".ckb_click").click(function () {
+        i = 0;
+        $(".ckb_click").each(function () {
+            if ($(this).is(':checked')) {
+                $(this).attr("name", "[" + i + "].Maquyen");
+                i++;
+            }
+        })
+    })
+</script>
+

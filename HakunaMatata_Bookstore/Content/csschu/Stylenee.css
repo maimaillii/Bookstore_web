@@ -1,0 +1,172 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap");
+
+bodyneee {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    background: linear-gradient(45deg, greenyellow, dodgerblue);
+    font-family: "Sansita Swashed", cursive;
+}
+
+.centerne {
+    position: relative;
+    padding: 50px 50px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+    .centerne h1 {
+        font-size: 2em;
+        border-left: 5px solid dodgerblue;
+        color: #000;
+        letter-spacing: 5px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        padding-left: 10px;
+    }
+
+    .centerne .inputboxne {
+        position: relative;
+        width: 300px;
+        color:black;
+        height: 50px;
+        margin-bottom: 50px;
+    }
+
+        .centerne .inputboxne input {
+            position: absolute;
+            top: 0;
+            text-align:center;
+            width: 100%;
+            border: 2px solid #000;
+            outline: none;
+            background: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 1.2em;
+        }
+
+        .centerne .inputboxne:last-child {
+            margin-bottom: 0;
+        }
+
+        .centerne .inputboxne span {
+            position: absolute;
+            top: 14px;
+            left: 0px;
+            font-size: 1em;
+            transition: 0.6s;
+            font-family: sans-serif;
+        }
+
+        .centerne .inputboxne input:focus ~ span,
+        .centerne .inputboxne input:valid ~ span {
+            transform: translateX(-13px) translateY(-35px);
+            font-size: 1em;
+        }
+
+        .centerne .inputboxne [type="button"] {
+            width: 50%;
+            background: dodgerblue;
+            color: #fff;
+            border: #fff;
+        }
+
+        .centerne .inputboxne:hover [type="button"] {
+            background: linear-gradient(45deg, greenyellow, dodgerblue);
+        }
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: lightskyblue;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px bold;
+    padding: 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.buttonmt {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: lightskyblue;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px bold;
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+    .buttonmt:hover {
+        background-color: #f5f67a;
+        color: white;
+    }
+
+.buttonsm {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: lightskyblue;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px bold;
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+    .buttonsm:hover {
+        background-color: #ff0000;
+        color: white;
+    }
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+.button:hover {
+    background-color: lightsalmon;
+    color: white;
+}
+
+    .button:hover span {
+        padding-right: 25px;
+    }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }

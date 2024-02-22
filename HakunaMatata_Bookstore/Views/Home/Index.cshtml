@@ -1,0 +1,263 @@
+﻿@using HakunaMatata_Bookstore.Models
+@model IEnumerable<SACH>
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/layout/Home_layout.cshtml";
+}
+@*//header
+    banner-text*@
+<div class="banner-text">
+    <h2>WELCOME TO HAKUNA MATATA</h2>
+    <a style="top:470px;right:240px;font-size: 23px;color:teal">Một cuốn sách là một giấc mơ mà bạn cầm trong tay!</a>
+</div>
+@*gallery*@
+<div class="gallery-ban" id="gallery">
+    <div class="container">
+        <div class="nbs-flexisel-container">
+            <div class="nbs-flexisel-inner">
+                <ul id="flexiselDemo1" class="nbs-flexisel-ul" style="left: -180px; display: block;">
+
+                    <li class="nbs-flexisel-item" style="width: 180px;">
+                        <div class="wthree_testimonials_grid_main">
+                            <img src="~/Content/images/hinh-anh-cuon-sach-dep-1.jpg" alt=" " class="img-responsive">
+                        </div>
+                    </li>
+                    <li class="nbs-flexisel-item" style="width: 180px;">
+                        <div class="wthree_testimonials_grid_main">
+
+                            <img src="~/Content/images/hinh-anh-cuon-sach-dep-11.jpg" alt=" " class="img-responsive">
+                        </div>
+                    </li>
+                    <li class="nbs-flexisel-item" style="width: 180px;">
+                        <div class="wthree_testimonials_grid_main">
+
+                            <img src="~/Content/images/hinh-anh-cuon-sach-dep-5.jpg" alt=" " class="img-responsive">
+                        </div>
+                    </li>
+                    <li class="nbs-flexisel-item" style="width: 180px;">
+                        <div class="wthree_testimonials_grid_main">
+
+                            <img src="~/Content/images/hinh-anh-cuon-sach-dep-35.jpg" alt=" " class="img-responsive">
+                        </div>
+                    </li>
+                    <li class="nbs-flexisel-item" style="width: 180px;">
+                        <div class="wthree_testimonials_grid_main">
+
+                            <img src="~/Content/images/hinh-anh-cuon-sach-dep-18.jpg" alt=" " class="img-responsive">
+                        </div>
+                    </li>
+                    <li class="nbs-flexisel-item" style="width: 180px;">
+                        <div class="wthree_testimonials_grid_main">
+
+                            <img src="~/Content/images/hinh-anh-cuon-sach-dep-2.jpg" alt=" " class="img-responsive">
+                        </div>
+                    </li>
+                    <li class="nbs-flexisel-item" style="width: 180px;">
+                        <div class="wthree_testimonials_grid_main">
+
+                            <img src="~/Content/images/hinh-anh-cuon-sach-dep-24.jpg" alt=" " class="img-responsive">
+                        </div>
+                    </li>
+                    <li class="nbs-flexisel-item" style="width: 180px;">
+                        <div class="wthree_testimonials_grid_main">
+
+                            <img src="~/Content/images/hinh-anh-cuon-sach-dep-18.jpg" alt=" " class="img-responsive">
+                        </div>
+                    </li>
+                    <li class="nbs-flexisel-item" style="width: 180px;">
+                        <div class="wthree_testimonials_grid_main">
+
+                            <img src="~/Content/images/hinh-anh-cuon-sach-dep-11.jpg" alt=" " class="img-responsive">
+                        </div>
+                    </li>
+                    <li class="nbs-flexisel-item" style="width: 180px;">
+                        <div class="wthree_testimonials_grid_main">
+
+                            <img src="~/Content/images/hinh-anh-cuon-sach-dep-35.jpg" alt=" " class="img-responsive">
+                        </div>
+                    </li>
+                    <li class="nbs-flexisel-item" style="width: 180px;">
+                        <div class="wthree_testimonials_grid_main">
+
+                            <img src="~/Content/images/hinh-anh-cuon-sach-dep-24.jpg" alt=" " class="img-responsive">
+                        </div>
+                    </li>
+                    <li class="nbs-flexisel-item" style="width: 180px;">
+                        <div class="wthree_testimonials_grid_main">
+
+                            <img src="~/Content/images/hinh-anh-cuon-sach-dep-11.jpg" alt=" " class="img-responsive">
+                        </div>
+                    </li>
+                </ul><div class="nbs-flexisel-nav-left" style="top: 52.5px;"></div><div class="nbs-flexisel-nav-right" style="top: 52.5px;"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@*//gallery*@
+</div>
+@*//banner*@
+@*<div class="ab-w3l-about">
+        <div class="container">
+            <h3 class="tittle-w3"><span>Welcome to Our</span> Hakuna Makata</h3>
+            <p class="para-w3l">
+                Luôn tâm huyết với việc khai thác những giá trị về văn hóa , tinh thần để tạo ra nguồn tri thức và những phút giây giải trí cho khách hàng, Hakuna Matata mở cửa đầu tiên vào năm 2021, mang trong mình lòng đam mê và khát vọng xây dựng một thương hiệu nhà sách, đem đến cho đọc giả sự thoải mái khi sử dụng dịch vụ. Hakuna Matata tin rằng thưởng thức một kiệt tác về văn học, đấm chìm trong thế giới truyện tranh hay cuốn mình theo những dòng tiểu thuyết sẽ là những trải nghiệm hoàn toàn khác biệt và tuyệt vời nhất cho những khách hàng của mình.
+
+                Đến với không gian mua sắm trực tuyến Hakuna Matata, khách hàng có thể dễ dàng tìm thấy những cuốn sách hay, đa thể loại của nhiều nhà xuất bản, công ty sách trong và ngoài nước. Cùng với tiêu chí không ngừng hoàn thiện và nâng cao chất lượng sản phẩm, dịch vụ, Hakuna Matata cam kết mang đến cho khách hàng trải nghiệm mua sắm trực tuyến an toàn, tiện lợi, chăm sóc khách hàng tận tình và chu đáo.
+            </p><p><a class="read" href="single.html">Read More</a></p>
+        </div>
+    </div>*@
+<div class="about" id="about">
+    <div class="col-md-6 ab-w3-agile-info">
+        <div class="ab-w3-agile-info-text">
+            <h3 class="tittle-w3">Về<span> Chùng tôi</span></h3>
+            <p class="para-w3l">Luôn tâm huyết với việc khai thác những giá trị về văn hóa , tinh thần để tạo ra nguồn tri thức và những phút giây giải trí cho khách hàng, Hakuna Matata mở cửa đầu tiên vào năm 2021, mang trong mình lòng đam mê và khát vọng xây dựng một thương hiệu nhà sách, đem đến cho đọc giả sự thoải mái khi sử dụng dịch vụ </p>
+            <div class="about-read">
+                <a href="single.html">Tìm hiểu thêm</a>
+            </div>
+        </div>
+        <div class="ab-w3-agile-inner">
+            <div class="col-md-6 ab-w3-agile-part">
+                <h4>Xử lý nhu cầu của bạn một cách cẩn thận</h4>
+                <p class="para-w3l">Với tiêu chí không ngừng hoàn thiện và nâng cao chất lượng sản phẩm, dịch vụ, Hakuna Matata cam kết mang đến cho khách hàng trải nghiệm mua sắm trực tuyến an toàn, tiện lợi, chăm sóc khách hàng tận tình và chu đáo.</p>
+            </div>
+            <div class="col-md-6 ab-w3-agile-part two">
+                <h4>Những cuốn sách mang giá trị hiện đại và cổ điển</h4>
+                <p class="para-w3l">Với những quyển sách được chọn lọc một cách chỉn chu, Hakuna Matata hy vọng sẽ truyền tải được nguồn năng lượng tích cực, đưa những quyển sách hữu ích đến người dùng, tạo cho người Việt Nam một nét văn hóa đọc sách lành mạnh</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="col-md-6 ab-w3-agile-img">
+
+    </div>
+
+    <div class="clearfix"></div>
+</div>
+@*blogs*@
+<div class="agile-blogs" id="blogs">
+    <div class="container">
+        <h3 class="tittle-w3"><span>Sản phẩm</span> Phổ biến</h3>
+        <div class="g1 agile-blog1">
+            <a href="#"><img src="https://f50-zpg.zdn.vn/7183257583301055172/88ec9b67e53e2e60772f.jpg" alt="blog1"></a>
+            <div class="text-w3">
+                <h3 class="tittle-w3 sub-head"><span><img src="https://f49-zpg.zdn.vn/8361595249971888157/d02e48b0b3e978b721f8.jpg"></span></h3>
+                <p class="para-w3l" style="font:sans-serif">
+                    Bị người yêu lừa dối, Takako bỏ việc và rơi vào chuỗi ngày ngủ triền miên để trốn tránh nỗi buồn. Thế rồi, một cuộc điện thoại từ người cậu ruột cả 10 năm trời không gặp đã đánh thức cô khỏi cơn mộng mị. Takako đồng ý đến trông hiệu sách nửa buổi giúp cậu chỉ để làm vừa lòng mẹ. Nhưng thật ngoài tưởng tượng, chờ đợi cô là hiệu sách Morisaki cũ kỹ với thế giới của hàng nghìn cuốn sách chứa trong mình cả thời gian và lịch sử. Sách đã chữa lành vết thương trong lòng cô.
+
+                    Và hơn thế nữa, Takako tìm thấy bao nhiêu điều mới mẻ và thú vị mà trước đây cô chưa từng biết đến.Câu chuyện nhẹ nhàng mà sâu lắng, đặc biệt với những ai có sở thích sưu tầm sách cổ.
+                </p>
+
+                <a class="read b1" href="#">Xem chi tiết</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="g2 agile-blog2">
+            <a href="#"><img src="https://f48-zpg.zdn.vn/4857440553435713652/f11d444ac4130f4d5602.jpg" alt="blog1"></a>
+            <div class="text-w3l">
+                <h3 class="tittle-w3 sub-head"><span><img src="https://f41-zpg.zdn.vn/2028085663100219314/76c104cf84974fc91686.jpg"></span></h3>
+                <p class="para-w3l">
+                    Cuốn sách là câu chuyện về Monsieur Perdu, chủ tiệm sách bên bờ sông Seine, người tự gọi mình là dược sĩ văn chương. Nhờ giác quan đặc biệt của mình, ông có thể kê đơn cho độc giả chính xác những cuốn sách giúp họ vượt qua khó khăn trong cuộc sống. Chữa lành vết thương, hàn gắn trái tim người khác, song Monsieur Perdu lại không thể chữa cho chính mình, và trái tim ông vẫn luôn rỉ máu từ khi người yêu ông bỏ ra đi để lại một bức thư mà ông chưa từng mở ra. Rồi đến một ngày, ông đọc lá thư và quyết định khám phá kết cục của câu chuyện đời mình. Cùng với một tác giả sách bán chạy nhưng bị cấm xuất bản, và một đầu bếp người Ý thất tình, Perdu du hành dọc theo những dòng sông nước Pháp, cho chúng ta thấy rằng thế giới văn chương có thể đưa tâm hồn con người lên một cuộc du hành hàn gắn và chữa lành như thế nào.
+
+                    Hiệu sách nhỏ ở Paris là một lá thư tình gửi đến sách, đến tất cả những người tin rằng sức mạnh của những câu chuyện có thể định hình cuộc sống của chúng ta.
+                </p>
+                <a class="read b2" href="single.html">Xem chi tiết</a>
+
+            </div>
+            <div class="clearfix"></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--//blogs-->
+<!--services-section-->
+<h3 class="tittle-w3"><span>Các</span> sự kiện </h3>
+<div class="services-w3layouts" id="services">
+    <!-- //Stats -->
+    <div class="col-md-6 agitsworkw3ls-grid ">
+        <h3 class="tittle-w3"><span>Gặp gỡ</span> tác giả <span>&amp; </span>Trò chuyện <span>cùng họ</span></h3>
+        <p class="para-w3l">Su Van Hanh, Tp.Ho Chi Minh, VietNam</p>
+        <div class="services-left-w3-agile">
+            <h3 class="tittle-w3 sub-head"><span>Sự kiện </span>Nổi bật</h3>
+            <ul>
+                <li><i class="fa fa-check" aria-hidden="true"></i>Gặp gỡ tác giả</li>
+                <li><i class="fa fa-check" aria-hidden="true"></i>Buổi ký tặng</li>
+                <li><i class="fa fa-check" aria-hidden="true"></i>Chương trình tặng sách</li>
+                <li><i class="fa fa-check" aria-hidden="true"></i>Thư viện ngoài trời</li>
+                <li><i class="fa fa-check" aria-hidden="true"></i>Party</li>
+            </ul>
+        </div>
+        <div class="services-right-w3-agile">
+            <h3 class="tittle-w3 sub-head"><span>Sự kiện </span>sắp tới</h3>
+            <ul>
+                <li><i class="fa fa-check" aria-hidden="true"></i>Gặp gỡ tác giả</li>
+                <li><i class="fa fa-check" aria-hidden="true"></i>Buổi ký tặng</li>
+                <li><i class="fa fa-check" aria-hidden="true"></i>Thưởng thức văn học</li>
+                <li><i class="fa fa-check" aria-hidden="true"></i>Tiệc cuối năm</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-6 agitsworkw3ls-grid-2">
+        <div class="info-imgs">
+            <ul>
+                <li>
+                    <div class="gallery-grid1">
+                        <a href="single.html"><img src="https://f45-zpg.zdn.vn/4787721837903635909/a0930fa5c3f508ab51e4.jpg" alt=" " class="img-responsive"></a>
+                        <div class="p-mask">
+                            <h4><span>T</span>hưởng thức <span>v</span>ăn học</h4>
+                            <br />
+                            <b style="color:bisque">12:00, 24 thg 4, 2022</b>
+                            <br />
+                            <p>Su Van Hanh, Tp.Ho Chi Minh, VietNam</p>
+                            <p>Feel the Energy.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <a href="single.html"><img src="https://f51-zpg.zdn.vn/8201215919939702053/20ab1964d334186a4125.jpg" alt=" " class="img-responsive"></a>
+                        <div class="p-mask">
+                            <h4><span>T</span>rò chuyện cùng <span>t</span>ác giả</h4>
+                            <br />
+                            <b style="color:bisque">14:00, 19 thg 1, 2022</b>
+                            <br />
+                            <p>Su Van Hanh, Tp.Ho Chi Minh, VietNam</p>
+                            <p>Meet the writer.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <a href="single.html"><img src="https://f46-zpg.zdn.vn/786144995641439948/84d311f1daa111ff48b0.jpg" alt=" " class="img-responsive"></a>
+                        <div class="p-mask">
+                            <h4><span>B</span>uổi <span>k</span>ý tặng</h4>
+                            <br />
+                            <b style="color:bisque">
+                                14:00, 27 thg 8, 2022
+                            </b>
+                            <br />
+                            <p>Su Van Hanh, Tp.Ho Chi Minh, VietNam</p>
+                            <p>Get Your Copy</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="gallery-grid1">
+                        <a href="single.html"><img src="~/Content/images/s4.jpg" alt=" " class="img-responsive" style="height:365px"></a>
+                        <div class="p-mask">
+                            <h4><span>T</span>iệc <span>C</span>uối năm</h4>
+                            <br />
+                            <b style="color:bisque">
+                                19:00, 30 thg 12, 2021
+                            </b>
+                            <br />
+                            <p>Su Van Hanh, Tp.Ho Chi Minh, VietNam</p>
+                            <p>Party</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>

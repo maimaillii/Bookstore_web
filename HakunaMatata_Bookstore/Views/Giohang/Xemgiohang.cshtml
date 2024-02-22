@@ -1,0 +1,88 @@
+﻿@using HakunaMatata_Bookstore.Models
+@model List<ItemGioHang>
+@{
+    ViewBag.Title = "Xemgiohang";
+    Layout = "~/Views/layout/Sanpham.cshtml";
+}
+<link href="~/Content/csschu/Stylenee.css" rel="stylesheet" />
+@if (Model == null || Model.Count == 0)
+{
+    <h1 style="color: red; font-size: 50px; font-family: 'Comic Sans';padding-top:230px; " class="line-1 anim-typewriter">Giỏ hàng rỗng!</h1>
+}
+else
+{<div style="background-color:beige">
+        <table class="table">
+            <tr style="background-color:lightskyblue;">
+                <td><b>Mã SP</b></td>
+                <td><b>Tên SP</b></td>
+                <td sstyle="width:200px"><b>Hình ảnh</b></td>
+                <td><b>Số lượng</b></td>
+                <td><b>Đơn giá</b></td>
+                <td><b>Thành tiền</b></td>
+                <td></td>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MaSP</td>
+                    <td>@item.TenSP</td>
+                    <td style="height:fit-content; width:200px"><img style="width:130px;height:130px" src="@Url.Content("~/Content/Sach/" + item.Hinhanh)"/></td>
+                    <td>@item.Soluong</td>
+                    <td>@item.DonGia.ToString("#,##")VND</td>
+                    <td>@item.Thanhtien.ToString("#,##")VND</td>
+                    <td>
+                        <button class="button" type="submit" style="vertical-align:middle">@Html.ActionLink("Sửa", "SuaGioHang", new { @MaSP = item.MaSP })</button>
+                        <button class="button" type="submit" style="vertical-align:middle">@Html.ActionLink("Xóa", "Xoagiohang", new { @MaSP = item.MaSP })</button>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <br />
+ <div class="divdathang" style="text-align:center">
+     @*Thiết kế form cho khách hàng chưa có tài khoản*@
+     @using (Html.BeginForm("DatHang", "Giohang"))
+     {
+         if (Session["Taikhoan"] == null)
+         {
+         <div class="bodyneee">
+             <b style="border-left: 5px solid dodgerblue; letter-spacing: 5px; font-size: 2em; padding-left: 10px; ">Thông tin khách hàng</b>
+             <div class="centerne" style="margin-left:320px">
+
+                 <div class="inputboxne" style="text-align:center">
+                     <input type="text" id="TenKH" name="TenKH" required="required">
+                     <span>Họ tên</span>
+                     <i style="color:red;" id="TBtenKH"></i>
+                 </div>
+                 <div class="inputboxne" style="text-align:center">
+                     <input type="text" required="required" id="Diachi" name="Diachi">
+                     <span>Địa chỉ</span>
+                     <i style="color:red;" id="TBtenKH"></i>
+                 </div>
+                 <div class="inputboxne" style="text-align:center">
+                     <input type="text" required="required" id="SĐT" name="SĐT">
+                     <span>Số điện thoại</span>
+                 </div>
+                 <div class="inputboxne" style="text-align:center">
+                     <input type="text" required="required" id="Email" name="Email">
+                     <span>Email</span>
+                 </div>
+             </div>
+         </div>
+             <input class="buttonsm" type="submit" style="vertical-align:middle;text-align:center" id="btndathang" value="Đặt hàng" />
+             <button class="buttonmt" type="submit" style="vertical-align: middle; text-align: center">@Html.ActionLink("Mua tiếp", "Index", "Home")</button>}
+         else
+         {
+             <input class="buttonsm" type="submit" style="vertical-align:middle;text-align:center" id="btndathang" value="Đặt hàng" />
+             <button class="buttonmt" type="submit" style="vertical-align: middle; text-align: center">@Html.ActionLink("Mua tiếp", "Index", "Home")</button>}
+
+     }
+
+ </div>
+}
+
+<div class="clearfix"></div>
+
+
+

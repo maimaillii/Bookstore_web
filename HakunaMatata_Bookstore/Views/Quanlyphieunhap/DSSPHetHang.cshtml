@@ -1,0 +1,70 @@
+﻿@using HakunaMatata_Bookstore.Models;
+@model IEnumerable<SACH>
+@{ ViewBag.Title = "DSSPHetHang";
+                Layout = "~/Views/layout/Thongke.cshtml";
+                WebGrid grid = new WebGrid(source: Model, rowsPerPage: 3); }
+
+<h2 style="text-align:center">Những sản phẩm sắp hết hàng</h2>
+<br />
+<br />
+@*Thể hiện dữ liệu thông qua control WebGrid *@
+<div style="color:white">
+    @grid.GetHtml(
+        tableStyle: "gridTable",
+        headerStyle: "gridHead",
+        footerStyle: "gridFooter",
+        rowStyle: "gridRow",
+        alternatingRowStyle: "gridAltRow",
+        columns: grid.Columns(
+        grid.Column("MaSP", "Mã sách"),
+        grid.Column("Soluongton", "Số lượng tồn"),
+        grid.Column("TenSP", "Tên sách"),
+        //grid.Column("MoTa","Mô tả",format:p=>Html.Raw(p.MoTa)),
+        grid.Column("Hinhanh", "Hình ảnh", format: p => Html.Raw("<img src=\"../Content/Sach/" + p.Hinhanh + "\" style=\"height:150px;width:150px\">")),
+        grid.Column(format: p => Html.ActionLink("Nhập hàng ngay", "NhapHangDon", new { id = p.MaSP }, new { @target = "_blank", @style = "color:white" }))
+        )
+    )
+</div>
+
+
+<style>
+    .gridHead {
+        background-color: #ce00ff;
+        text-align:center;
+    }
+        .gridHead > th{
+            color: white;
+            text-align: center;
+        }
+
+        .gridHead > th > a {
+            color: white;
+            text-align:center;
+        }
+
+    /*.gridRow{
+        color:black;
+        background-color:blue
+    }*/
+
+    .gridAltRow {
+        border: 1px solid black;
+        text-align:center;
+    }
+
+    .gridFooter {
+        font-weight: bold;
+    }
+
+    .gridTable {
+        width: 100%;
+        border: 1px solid black;
+    }
+
+        .gridTable > th, td {
+            border: 1px solid orange;
+            text-align: center;
+        }
+</style>
+
+

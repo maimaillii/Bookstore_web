@@ -1,0 +1,320 @@
+﻿
+@{
+    ViewBag.Title = "Trangsanpham";
+    Layout = "~/Views/layout/Home_layout.cshtml";
+}
+<style>
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        padding: 0px;
+        margin: 0px auto;
+        background-color: antiquewhite;
+    }
+
+    #logo {
+        color: #045077;
+        font-size: 22px;
+        position: relative;
+        top: 38px;
+        left: 80px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    /*BANNER2*/
+    .banner-2 {
+        clear: both;
+        width: 100%;
+        height: 100%;
+        margin-left: 15px;
+        background-color: white;
+    }
+
+
+    .tab {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
+        border-style: none ridge none none;
+        float: left;
+        margin-left: 20px;
+        list-style-type: none;
+        text-align: center;
+        height: 2270px;
+        width: 210px;
+    }
+
+        .tab ul {
+            margin-top: 25px;
+            display: block;
+            list-style-type: none;
+        }
+
+        .tab li {
+            color: black;
+            width: 220px;
+            text-align: left;
+        }
+
+        .tab b {
+            font-size: 17px;
+            text-align: left;
+        }
+
+        .tab a {
+            text-align: left;
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+
+        .tab li :hover {
+            background: #EEEDE7;
+            height: max-content;
+        }
+
+        .tab img {
+            padding-left: 40px;
+            padding-top: 9px;
+        }
+
+    .product {
+        padding-left: 7cm;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+
+    .zoom {
+        display: inline-block;
+    }
+
+        .zoom:hover {
+            -ms-transform: scale(1.2); /*Độ phóng to*/
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .row {
+        padding: 1cm;
+        display: flex;
+    }
+
+    .column {
+        flex: 33.33%;
+        padding-left: 0px;
+    }
+
+        .column a {
+            text-decoration: none;
+            color: #045E8B;
+        }
+
+    .product img {
+        width: 250px;
+    }
+
+    .product.name {
+        margin-left: 7cm;
+    }
+
+    .notification {
+        background-color: white;
+        color: #045077;
+        text-align: center;
+        font-size: 38px;
+        padding: 70px 0px;
+    }
+</style>
+<div class="banner-2">
+    @Html.Action("MenuPartial", "Home")
+    <div class="product" align="center">
+        <div class="row">
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/deathnote.jpg"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 0px;">Death Note - Tập 6 (Tái Bản)</a>
+                    <br><b style="padding-left: 100px;">45.000đ</b>
+                    <button id="ThemGioHang"> <a href="#">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/neverland.jpg"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">Miền Đất Hứa - The Promised<br> Neverland - Tập 19 - Phiên Bản Bìa Trắng (White Ver)<br></a>
+                    <b style="padding-left: 100px;">40.000đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/BachDaHanh.png"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">Bạch Dạ Hành (Tái bản )</a>
+                    <br><b style="padding-left: 100px;">167.200đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/Hakuba.png"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">Vụ Án Mạng Ở Nhà Khách Núi Hakuba</a>
+                    <br><b style="padding-left: 100px;">110.400đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/GiaKim.jpg"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">Nhà Giả Kim (Tái bản 2020)</a>
+                    <br><b style="padding-left: 100px;">79.000đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/Morisaki.png"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">Những Giấc Mơ Ở Hiệu Sách Morisaki</a>
+                    <br><b style="padding-left: 100px;">60.000đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/LuatTamThuc.png"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">Luật Tâm Thức - Giải Mã Ma Trận Vũ Trụ</a>
+                    <br><b style="padding-left: 100px;">210.900đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/HanhPhuc.png"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">Tô Bình Yên Vẽ Hạnh Phúc (Tái Bản 2020)</a>
+                    <br><b style="padding-left: 100px;">78.000đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/NhanSoHoc.png"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">Thay Đổi Cuộc Sống Với Nhân Số Học</a>
+                    <br><b style="padding-left: 100px;">193.440đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/NhanChungHoc.png"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">30 Giây Nhân Chủng Học</a>
+                    <br><b style="padding-left: 100px;">110.500đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/BaiTapEnglish2.jpg"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">Bài Tập Tuần Tiếng Anh 2 (2021)</a>
+                    <br><b style="padding-left: 100px;">38.000đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/TAlop9.jpg"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">Tổng Hợp Kiến Thức Và Bài Tập Tiếng Anh Lớp 9</a>
+                    <br><b style="padding-left: 100px;">129.000đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/YVFE.jpg"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">Your Very First English - Tự Học Nghe Nói Tiếng Anh Chuẩn Dễ Nhanh Tập 2 (Tái Bản)</a>
+                    <br><b style="padding-left: 100px;">119.000đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/NguyenHienLe.jpg"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">Hồi Ký Nguyễn Hiến Lê</a>
+                    <br><b style="padding-left: 100px;">248.000đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/IFESF.jpg"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">Input Funny English Stories Faster - Nạp Thẳng Tiếng Anh Qua Truyện Cười Ngay Hôm Nay</a>
+                    <br><b style="padding-left: 100px;">198.000đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+            <div class="column">
+                <div class="zoom">
+                    <a href=""><img src="~/Content/picture/TiengHan.jpg"></a>
+                </div>
+                <div class="nameSP">
+                    <br><a href="" style="padding-left: 40px;">600 Câu Giao Tiếp Tiếng Hàn <br>Thông Dụng (Tái Bản)</a>
+                    <br><b style="padding-left: 100px;">97.000đ</b>
+                    <button id="ThemGioHang"><a href="Giohang.html">Thêm vào giỏ hàng</a></button>
+                    <button style=" margin-left: auto; margin-right: auto;"><a href="Chitietsp.html">Chi tiết</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>

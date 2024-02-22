@@ -1,0 +1,65 @@
+﻿@using HakunaMatata_Bookstore.Models
+@model IEnumerable<SACH>
+
+
+<div class="tab" align="right">
+    <div class="tab-1">
+        <ul>
+            <li><p style="color:rgba(5, 5, 5, 0.747);"><b>DANH MỤC SẢN PHẨM</b></p></li>
+            @foreach (var groupitem in Model.GroupBy(n => n.THELOAI))
+            {
+
+                if (groupitem.Key != null)
+                {
+
+                    foreach (var item in groupitem.GroupBy(n => n.THELOAI))
+                    {
+                        //Danh mục thể loại
+                        if (groupitem.Key != null)
+       
+                        {
+                            <li><a href="@Url.Action("Sanpham", "Danhmucsanpham", new {@MaloaiSP=groupitem.Key.Matheloaii})">@groupitem.Key.Tentheloai</a></li>
+                        }
+                    }
+                }
+            }
+        </ul>
+    </div>
+    <div class="tab-2">
+        <ul>
+            <li><p style="color:rgba(5, 5, 5, 0.747);"><b>NHÀ CUNG CẤP</b></p></li>
+            @foreach (var groupitem in Model.GroupBy(n => n.NHAXUATBAN))
+            {
+                if (groupitem.Key != null)
+                {
+                    <li><a href="@Url.Action("Sanphamtheonhaxuatban", "Danhmucsanpham", new {@MaNXB=groupitem.Key.MaNXB})">@groupitem.Key.TenNXB</a></li>
+                }
+            }
+        </ul>
+    </div>
+    @*<div class="tab-3">
+        <ul>
+            <li><p style="color:rgba(5, 5, 5, 0.747);"><b>Giá</b></p></li>
+            <li><a href="#"></a></li>
+            <li><a href="#">Từ 40.000Đ - 120.000Đ</a></li>
+            <li><a href="#">Trên 120.000Đ</a></li>
+        </ul>
+    </div>*@
+    <div class="tab-4">
+        <ul>
+            <li><p style="color:rgba(5, 5, 5, 0.747);"><b>Dịch vụ giao hàng</b></p></li>
+            <li><a><img src="~/Content/picture/lazada.png" style="width:150px"></a></li>
+            <li><a><img src="~/Content/picture/tikinow.png" style="width:150px"></a></li>
+        </ul>
+    </div>
+    <div class="tab-5">
+        <ul>
+            <li><p style="color:rgba(5, 5, 5, 0.747);"><b>Phương thức thanh toán</b></p></li>
+            <li><a><img src="~/Content/picture/momo1.png" style="width:150px"></a></li>
+            <li><a><img src="~/Content/picture/zalopay1.png" style="width:150px"></a></li>
+            <li><a><img src="~/Content/picture/bidv.png" style="width:150px"></a></li>
+            <li><a><img src="~/Content/picture/vietcombank.png" style="width:150px"></a></li>
+            <li><a><img src="~/Content/picture/tienmat.png" style="width:150px"></a></li>
+        </ul>
+    </div>
+</div>

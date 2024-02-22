@@ -1,0 +1,54 @@
+﻿@using HakunaMatata_Bookstore.Models
+@model IEnumerable<NHAXUATBAN>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/layout/Thongke.cshtml";
+    WebGrid grid = new WebGrid(source: Model, rowsPerPage: 50);
+}
+
+<h2>Quản lý nhà xuất bản</h2>
+<link href="~/Content/csschu/Stylenee.css" rel="stylesheet" />
+@Html.ActionLink("Thêm nhà xuất bản", "TaomoiNXB", null, new { @class = "buttonmt" })
+
+<style>
+    ul {
+        list-style-type: none;
+    }
+</style>
+
+@grid.GetHtml(
+
+tableStyle: "divTable",
+headerStyle: "gridHead",
+footerStyle: "gridFooter",
+rowStyle: "gridRow",
+alternatingRowStyle: "gridAltRow",
+columns: grid.Columns(
+    grid.Column("MaNXB", "Mã NXB"),
+    grid.Column("TenNXB", "Tên NXB")
+    ))
+
+<style>
+    .divTable {
+        width: 100%
+    }
+
+    .divTable {
+        border: 1px solid #c892ff
+    }
+
+    .gridHead {
+        background: #c892ff
+    }
+
+    .gridHead {
+        background: #c892ff;
+        border: 1px solid #c892ff
+    }
+
+    .gridRow {
+        background-color: aquamarine;
+        margin-top: 20px;
+        border: 1px solid #c892ff
+    }
+</style>

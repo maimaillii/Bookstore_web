@@ -1,0 +1,5 @@
+﻿@*<li>
+    <a href="Giohang"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">Giỏ hàng</span></a>
+</li>*@
+@*//Dùng Viewbag để thể hiện tổng số lượng sp có trong giỏ hàng*@
+<li><i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i><a href="@Url.Action("Xemgiohang","Giohang")">GIỎ HÀNG <span>[ @ViewBag.TongSoLuong ]</span></a></li>

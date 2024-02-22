@@ -1,0 +1,82 @@
+﻿@using HakunaMatata_Bookstore.Models
+@using CaptchaMvc.HtmlHelpers
+@using CaptchaMvc
+
+@model THANHVIEN
+
+
+@{
+    ViewBag.Title = "Dangki";
+    Layout = "~/Views/layout/Home_layout.cshtml";
+}
+<style>
+
+    /* Add styles to the form container */
+    .containerr {
+        position: absolute;
+        align-self: center;
+        right: 25%;
+        max-width: 50%;
+        padding: 16px;
+        margin-left:360px;
+        background-color: white;
+    }
+
+    /* Full-width input fields */
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #dee9fc;
+    }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+    /* Set a style for the submit button */
+    .btnn {
+        background-color: #045E8B;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+        .btnn:hover {
+            opacity: 10;
+            color: blueviolet;
+            background-color: pink;
+            animation-fill-mode: backwards;
+        }
+</style>
+@*<form action="DangNhap.html" class="containerr">*@
+<div class="containerr">
+    @using (Html.BeginForm())
+    {
+        <h1 style="color: #045E8B;text-align: center;">ĐĂNG KÝ</h1>
+        <table style=" margin-left: auto; margin-right: auto">
+            <tr><th></th><th></th><th colspan="5"></th></tr>
+            @*//3 cột*@
+            <tr> <td style="padding-left: 20px"><label for="email"><b>Tài khoản / Email</b></label>@Html.TextBox("Taikhoan")</td> <td style="padding-left:20px"><label for="email"><b>Địa chỉ</b></label>@Html.TextBox("Diachi")</td><td></td></tr> @*5dongf*@
+            <tr> <td style="padding-left: 20px"><label for="password"><b>Nhập mật khẩu</b></label>@Html.Password("Matkhau")</td> <td style="padding-left: 20px"><label for="email"><b>Email</b></label>@Html.TextBox("Email")</td><td></td></tr>
+            <tr> <td style="padding-left: 20px"><label for="password"><b>Xác nhận mật khẩu</b></label>@Html.Password("XacnhanMatkhau")</td> <td style="padding-left: 20px"><label for="sdt"><b>Số điện thoại </b></label>@Html.TextBox("Sodienthoai")</td><td></td></tr>
+            <tr> <td style="padding-left: 20px">@Html.Captcha(4)<div></div></td><td></td></tr>
+            <tr> <td style="padding-left: 20px"><input value="Đăng ký" type="submit" class="btnn"></td> <td style="padding-left: 50px"><div style="background-color: #045E8B;height: 1.25cm;display: block;"><a href="DangNhap.html" class="btnn" style="margin-top: 10px ;display: block;text-decoration: none;font-size: 15px;text-align: center;padding-top: 14px;"> Thoát </a></div></td><td></td></tr>
+        </table>
+    }
+    <h1 style="color:red; padding-top:-500px; text-align:center">
+        @ViewBag.Thongbao
+    </h1>
+
+</div>
+
+
+@*</form>*@
+
+
+

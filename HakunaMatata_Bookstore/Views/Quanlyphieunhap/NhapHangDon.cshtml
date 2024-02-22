@@ -1,0 +1,57 @@
+﻿@using HakunaMatata_Bookstore.Models;
+@model SACH
+@{ ViewBag.Title = "NhapHangDon";
+    Layout = "~/Views/layout/Thongke.cshtml"; }
+
+<legend>Nhập hàng cho sản phẩm <b style="color: rgb(192,0,0)">@Model.TenSP</b> </legend>
+
+<hr />
+<br />
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="imgSP">
+            <img src="@Url.Content("~/Content/Sach/"+Model.Hinhanh)" />
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="ttSP">
+            <h3>Hãng sản xuất: @Model.NHAXUATBAN.TenNXB</h3>
+            <h3>Loại sản phẩm: @Model.THELOAI.Tentheloai</h3>
+            <h3>Số lượng tồn: @Model.Soluongton</h3>
+        </div>
+    </div>
+</div>
+<br />
+<fieldset>
+    <legend>Thông tin nhập hàng</legend>
+</fieldset>lstNCC
+@using (Html.BeginForm("NhapHangDon", "QuanLyPhieuNhap"))
+{
+@Html.Hidden("MaSP", Model.MaSP)
+                <div class="row">
+                    <div class="col-md-4">
+                        @{var lstNCC = (SelectList)ViewBag.MaNXB;}
+                        Nhà cung cấp: @Html.DropDownList("MaNXB", lstNCC, new { @class = "MaNXB" })
+                    </div>
+                    <div class="col-md-4">
+                        So lượng nhập : @Html.TextBox("Soluongnhap")
+                    </div>
+                    <div class="col-md-4">
+                        Đơn giá nhập :@Html.TextBox("Dongianhap")
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+                                <div class="clear right" style="text-align:right;">
+                                    <br />
+                                    <input type="submit" class="btn btn-primary" value="Nhập hàng" />
+                                </div>}
+<style>
+    .imgSP {
+        border: 1px solid #999999;
+        background-color: #fff;
+        padding: 15px;
+    }
+</style>

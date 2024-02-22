@@ -1,0 +1,78 @@
+﻿@using HakunaMatata_Bookstore.Models
+@model ItemGioHang
+
+
+@{
+    ViewBag.Title = "Suagiohang";
+    Layout = "~/Views/layout/Sanpham.cshtml";
+}
+
+@{
+    List<ItemGioHang> lstGioHang = ViewBag.GioHang as List<ItemGioHang>;
+}
+<link href="~/Content/csschu/Stylenee.css" rel="stylesheet" />
+<div style="background-color:beige">
+    <table class="table">
+        <tr style="background-color:lightskyblue">
+            <td><b>Mã SP</b></td>
+            <td><b>Tên SP</b></td>
+            <td><b>Hình ảnh</b></td>
+            <td><b>Số lượng</b></td>
+            <td><b>Đơn giá</b></td>
+            <td><b>Thành tiền</b></td>
+            <td></td>
+        </tr>
+
+        @foreach (var item in lstGioHang)
+        {
+            //Sản phẩm có mã sản phẩm đc chỉnh sửa gửi từ tham số bên trang xem giỏ hàng
+            if (Model.MaSP == item.MaSP)
+            {
+                using (Html.BeginForm("CapNhatGioHang", "GioHang"))
+                {
+                    <tr>
+                        <td>@item.MaSP @Html.Hidden("MaSP", item.MaSP)</td>
+                        <td>@item.TenSP</td>
+                        <td><img src="@Url.Content("~/Content/Sach/" + item.Hinhanh)" width="20" height="150" /></td>
+                        <td>
+                            @Html.TextBox("Soluong", @item.Soluong, new { @class = "Soluongthaydoi" })
+                            <span id="TB_soluongthaydoi"></span>
+                        </td>
+                        <td>@item.DonGia.ToString("#,##")VND</td>
+                        <td>@item.Thanhtien.ToString("#,##")VND</td>
+                        <td>
+                            <button class="button" type="submit" style="vertical-align:middle" id="btncapnhatGH">
+                                <span>Cập nhật</span>
+                            </button>
+                            <button class="button" type="submit" style="vertical-align:middle">
+                                @Html.ActionLink("Xóa", "Xoagiohang", new { @MaSP = item.MaSP })
+                            </button>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td>@item.MaSP</td>
+                    <td>@item.TenSP</td>
+                    <td><img src="@Url.Content("~/Content/Sach/"+item.Hinhanh)" width="20" height="150" /></td>
+                    <td>@item.Soluong</td>
+                    <td>@item.DonGia.ToString("#,##")VND</td>
+                    <td>@item.Thanhtien.ToString("#,##")VND</td>
+                    <td>
+                        <button class="button" type="submit" style="vertical-align:middle" id="btncapnhatGH">
+                            @Html.ActionLink("Sửa", "SuaGioHang", new { @MaSP = item.MaSP })
+                        </button>
+                        <button class="button" type="submit" style="vertical-align:middle">
+                            @Html.ActionLink("Xóa", "Xoagiohang", new { @MaSP = item.MaSP })
+                        </button>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <div class="clearfix"></div>
+</div>
+
+

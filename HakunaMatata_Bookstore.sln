@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HakunaMatata_Bookstore", "HakunaMatata_Bookstore\HakunaMatata_Bookstore.csproj", "{21A0CDEA-F69A-478A-97A4-9440B5CBD4C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21A0CDEA-F69A-478A-97A4-9440B5CBD4C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A0CDEA-F69A-478A-97A4-9440B5CBD4C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A0CDEA-F69A-478A-97A4-9440B5CBD4C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A0CDEA-F69A-478A-97A4-9440B5CBD4C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EEE9847-007B-4409-915B-A27018355E48}
+	EndGlobalSection
+EndGlobal

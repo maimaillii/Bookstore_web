@@ -1,0 +1,75 @@
+﻿@using HakunaMatata_Bookstore.Models
+@model IEnumerable<SACH>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/layout/Thongke.cshtml";
+
+    WebGrid grid = new WebGrid(source: Model, rowsPerPage: 5);
+}
+<link href="~/Content/csschu/Stylenee.css" rel="stylesheet" />
+@Html.ActionLink("Thêm sách mới", "Taomoi", null, new { @class = "buttonmt" })
+
+<style>
+    ul {
+        list-style-type: none;
+    }
+</style>
+<ul >
+    <li>
+
+        @using (Html.BeginForm("KQTimkiemm", "Timkiemsachdathem"))
+        {
+        <div style="margin-left:750px;margin-top:-40px">
+            <div>
+                <input type="text" name="Tukhoa" placeholder="Hãy nhập sách bạn cần tìm..." class="search-input">
+                <button type="submit"><i>Tìm kiếm</i></button>
+            </div>
+        </div>
+        }
+    </li>
+</ul>
+
+<br />
+<br />
+<div style="color:black">
+    @grid.GetHtml(
+
+    tableStyle: "divTable",
+    headerStyle: "gridHead",
+    footerStyle: "gridFooter",
+    rowStyle: "gridRow",
+    alternatingRowStyle: "gridAltRow",
+    columns: grid.Columns(
+        grid.Column("MaSP", "Mã sách"),
+        grid.Column("TenSP", "Tên sách"),
+        grid.Column("Hinhanh", "Hình ảnh", format: p => @Html.Raw("<img width=\"150\" height=\"150\"  src=\"../Content/Sach/" + p.Hinhanh + "\">")),
+        grid.Column(format: p => @Html.ActionLink("Xóa", "Xoa", new { id = p.MaSP }))
+        ))
+</div>
+<style>
+    .divTable {
+        width: 100%
+    }
+
+    .divTable {
+        border: 1px solid #c892ff
+    }
+
+    .gridHead {
+        background: #c892ff
+    }
+
+    .gridHead {
+        background: #c892ff;
+        border: 1px solid #c892ff
+    }
+
+    .gridRow {
+        background-color: aquamarine;
+        margin-top: 20px;
+        border: 1px solid #c892ff
+    }
+    a{
+        color:#ffd800
+    }
+</style>
